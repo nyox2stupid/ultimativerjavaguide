@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<style>@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+#myVideo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 35%;
+}
+
+.fade-in{
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.25; }
+}
+
+body {  
+  background-color: black;
+  font-family: Poppins;
+  font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 5px;
+  overflow: hidden;
+  background-color: #567d9c;
+  border-radius: 8px;
+  display: table;
+  margin: 0 auto;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  border-radius: 8px;
+  display: block;
+  text-align: center;
+  padding: 4px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 8px 3px;
+}
+
+li a:hover {
+  opacity: 65%;
+  font-size: 26px;
+}
+
+.active {
+  opacity: 45%;
+}
+
+h1 {
+  color: #f7eee0;
+  border-radius: 5px;
+  background-color: #0f4162;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+a {
+  color: white;
+  background-color: white;
+  border-radius: 3px;
+  opacity: 100%;
+}
+
+.container {
+    display: flex;     
+    justify-content: center;     
+    align-items: center;  
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  
+}
+p {
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  margin: 15px 0;
+  padding: 8px;
+  position: absolute;
+  top: 40%;
+  width: 60%;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<video autoplay muted loop id="myVideo" class="fade-in">
+  <source src="TopoDesktop.mp4" type="video/mp4">
+</video>
+
+<body>
+
+  <ul class="glass">
+    <li><a class="active glass" id="HOME_BUTTON">HOME</a></li>
+    <li><a class="glass"        id="CLASS_BUTTON">KLASSEN</a></li>
+    <li><a class="glass"        id="OBJECT_BUTTON">OBJEKTE</a></li>
+    <li><a class="glass"        id="FUNCTION_BUTTON">METHODEN</a></li>
+    <li><a class="glass"        id="ATTRIBUTE_BUTTON">ATTRIBUTE</a></li>
+  </ul>
+
+<div class="container">
+  <p id="C_SPACE" class="glass">Herzlich willkommen auf diesem Java-Guide! Unabhängig davon, ob Sie ein Anfänger sind, der gerade erst in die Welt der Programmierung eintaucht, oder ein erfahrener Entwickler, der seine Kenntnisse vertiefen möchte, sind Sie hier genau richtig. Unsere Website bietet Ihnen eine Schatzkammer an Wissen über Java-Programmierung. Von den Grundlagen bis zu fortgeschrittenen Konzepten bieten wir Ihnen detaillierte Erklärungen, praktische Beispiele und wertvolle Ressourcen, um Ihre Java-Fähigkeiten zu verbessern. Tauchen Sie ein und entdecken Sie die Faszination hinter einer der beliebtesten und vielseitigsten Programmiersprachen der Welt.</p>
+</div>
+<script type="text/javascript">
+  var home_button = document.getElementById("HOME_BUTTON");
+  var class_button = document.getElementById("CLASS_BUTTON");
+  var obj_button = document.getElementById("OBJECT_BUTTON");
+  var func_button = document.getElementById("FUNCTION_BUTTON");
+  var attr_button = document.getElementById("ATTRIBUTE_BUTTON");
+
+  var cntntspc = document.getElementById("C_SPACE");
+
+  var home_text ="Herzlich willkommen auf diesem Java-Guide! Unabhängig davon, ob Sie ein Anfänger sind, der gerade erst in die Welt der Programmierung eintaucht, oder ein erfahrener Entwickler, der seine Kenntnisse vertiefen möchte, sind Sie hier genau richtig. Unsere Website bietet Ihnen eine Schatzkammer an Wissen über Java-Programmierung. Von den Grundlagen bis zu fortgeschrittenen Konzepten bieten wir Ihnen detaillierte Erklärungen, praktische Beispiele und wertvolle Ressourcen, um Ihre Java-Fähigkeiten zu verbessern. Tauchen Sie ein und entdecken Sie die Faszination hinter einer der beliebtesten und vielseitigsten Programmiersprachen der Welt.";
+  var class_text ="In der Welt der objektorientierten Programmierung ist eine Klasse ein Schlüsselelement. Eine Klasse fungiert als Bauplan für Objekte, definiert ihre Eigenschaften und Verhaltensweisen. Auf unserer Website erfahren Sie ausführlich, wie Sie Klassen erstellen, verwalten und verwenden können. Wir decken verschiedene Konzepte ab, einschließlich Vererbung, Polymorphie und Abstraktion. Darüber hinaus bieten wir praktische Anleitungen zur Implementierung von Klassen in realen Anwendungen. Entdecken Sie, wie Sie sauberen, wartbaren und effizienten Code schreiben, indem Sie die Konzepte der Klassen in Java meistern.";
+  var obj_text ="Objekte sind die grundlegenden Bausteine in der Java-Programmierung. Sie repräsentieren reale oder abstrakte Entitäten und spielen eine zentrale Rolle in der Verarbeitung von Daten. Auf unserer Website zeigen wir Ihnen, wie Sie Objekte erstellen, initialisieren und manipulieren können. Wir gehen auch auf fortgeschrittene Konzepte wie Objektvererbung und Schnittstellen ein. Erfahren Sie, wie Sie komplexe Datenstrukturen erstellen und Objekte effizient verwenden können, um die Leistung Ihrer Java-Anwendungen zu optimieren.";
+  var func_text ="Methoden sind die Werkzeuge, die es Objekten ermöglichen, Aktionen auszuführen und Daten zu manipulieren. Ohne Methoden wären Objekte starr und unfähig, mit ihrer Umgebung zu interagieren. Unsere Website bietet Ihnen eine umfassende Anleitung zur Erstellung von Methoden in Java. Wir erklären, wie Sie Methoden deklarieren, aufrufen und überladen können. Darüber hinaus zeigen wir Ihnen bewährte Techniken zur Fehlerbehandlung und Ausnahmeauslösung in Ihren Methoden. Sie werden verstehen, wie Sie Methoden effektiv verwenden können, um die Funktionalität Ihrer Java-Anwendungen zu erweitern und gleichzeitig den Code übersichtlich und wartbar zu halten.";
+  var attr_text ="Attribute, auch als Instanzvariablen bekannt, sind die Daten, die eine Klasse beschreiben. Sie definieren die Eigenschaften von Objekten und speichern deren Zustand. Auf unserer Website erfahren Sie, wie Sie Attribute deklarieren und initialisieren können. Wir zeigen Ihnen auch bewährte Methoden zur Verwaltung von Attributen, einschließlich des Einsatzes von Sichtbarkeitsmodifikatoren und Eigenschaftsgettern und -setzern. Lernen Sie, wie Sie Daten inkapsulieren, um die Integrität Ihrer Objekte zu schützen, und verstehen Sie die Bedeutung von Attributen für die objektorientierte Programmierung in Java.";
+
+
+  home_button.addEventListener("click", set_home_tab);
+  class_button.addEventListener("click", set_class_tab);
+  obj_button.addEventListener("click", set_obj_tab);
+  func_button.addEventListener("click", set_func_tab);
+  attr_button.addEventListener("click", set_attr_tab);
+
+  function set_home_tab() {
+    home_button.classList.add('active');
+
+    class_button.classList.remove('active');
+    obj_button.classList.remove('active');
+    func_button.classList.remove('active');
+    attr_button.classList.remove('active');
+
+    cntntspc.innerHTML = home_text;
+  }
+
+  function set_class_tab() {
+    class_button.classList.add('active');
+
+    home_button.classList.remove('active');
+    obj_button.classList.remove('active');
+    func_button.classList.remove('active');
+    attr_button.classList.remove('active');
+
+    cntntspc.innerHTML = class_text;
+  }
+
+    function set_obj_tab() {
+    obj_button.classList.add('active');
+
+    class_button.classList.remove('active');
+    home_button.classList.remove('active');
+    func_button.classList.remove('active');
+    attr_button.classList.remove('active');
+
+    cntntspc.innerHTML = obj_text;
+  }
+
+    function set_func_tab() {
+    func_button.classList.add('active');
+
+    class_button.classList.remove('active');
+    obj_button.classList.remove('active');
+    home_button.classList.remove('active');
+    attr_button.classList.remove('active');
+
+    cntntspc.innerHTML = func_text;
+  }
+
+    function set_attr_tab() {
+      attr_button.classList.add('active');
+
+    class_button.classList.remove('active');
+    obj_button.classList.remove('active');
+    func_button.classList.remove('active');
+    home_button.classList.remove('active');
+
+    cntntspc.innerHTML = attr_text;
+  }
+</script>
+</body>
+</html>
